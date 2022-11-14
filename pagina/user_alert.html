@@ -1,0 +1,105 @@
+
+<!doctype html>
+
+<html>
+
+  <head>
+
+    <title>User alert</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <script src="./scripts/alert_table.js"></script>
+    <link href="./styles/adminstyle.css" rel="stylesheet">
+    <script src="./scripts/seccion.js"></script>
+
+  </head>
+
+  <body onload="validation(); table();">
+
+    <header class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
+
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="user_general.html" style="font-size:1.8em">&nbsp;&nbsp;Greenhouse</a>
+
+      <h3 class="fs-3" style="color:white" id="usersec">User</h3>
+
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-3" href=" " onclick="delete_seccion();">Sign out</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="container-fluid" style="padding-left:20em">
+
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+
+        <div class="position-sticky pt-3 sidebar-sticky">
+
+          <ul class="nav flex-column">
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="user_general.html" style="font-size:1.3em">
+                <p class="bi-house" class="text"> General view</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="user_historical.html" style="font-size:1.3em">
+                <p class="bi-graph-up" class="text"> Historical data</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="user_alert.html" style="font-size:1.3em">
+                <p class="bi-shield-exclamation" class="text"> Alert View</p>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </nav>
+
+      <main style="margin-right:50">
+
+        <br>
+
+        <h1 class="h2 border-bottom border-success ">Alert</h1>
+
+        <br>
+
+        <div class="container">
+
+          <div class="row justify-content-md-center">
+
+            <table class="table table-bordered text-center" id="alert_table">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Value</th>
+                  <th scope="col">TimeStamp</th>
+                  <th scope="col">Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </body>
+
+</html>

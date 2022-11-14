@@ -1,0 +1,233 @@
+
+<!doctype html>
+
+<html>
+
+  <head>
+
+    <title>Admin general</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/alert.js"></script>
+    <link href="./styles/adminstyle.css" rel="stylesheet">
+    <script src="./scripts/seccion.js"></script>
+
+  </head>
+
+  <body onload=" validation(); data(); al();">
+
+    <header class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
+
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="admin_general.html" style="font-size:1.8em">&nbsp;&nbsp;SmartBaby</a>
+
+      <h3 class="fs-3" style="color:white" id="usersec">User</h3>
+
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-3" href=" " onclick="delete_seccion();">Sign out</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="container-fluid" style="padding-left:20em">
+
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+
+        <div class="position-sticky pt-3 sidebar-sticky">
+
+          <ul class="nav flex-column">
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="admin_general.html" style="font-size:1.3em">
+                <p class="bi-house" class="text"> General view</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="admin_historical.html" style="font-size:1.3em">
+                <p class="bi-graph-up" class="text"> Historical data</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="admin_alert.html" style="font-size:1.3em">
+                <p class="bi-shield-exclamation" class="text"> Alert View</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="admin_modify.html" style="font-size:1.3em">
+                <p class="bi-pencil-square" class="text"> Modify data</p>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </nav>
+
+      <main style="margin-right:50">
+
+        <br>
+
+        <h1 class="h2 border-bottom border-primary">General view</h1>
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-sm">
+
+              <br><br>
+
+              <img class="mb-4 rounded mx-auto d-block" src="./imagenes/termometro.png" alt="" width="150" height="130">
+
+            </div>
+
+            <div class="col-sm">
+
+              <br><br>
+
+              <img class="mb-4 rounded mx-auto d-block" src="./imagenes/recien-nacido.png" alt="" width="150" height="130">
+
+            </div>
+
+            <div class="col-sm">
+
+              <br><br>
+
+              <img class="mb-4 rounded mx-auto d-block" src="./imagenes/latido-del-corazon.png" alt="" width="150" height="130">
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-sm">
+
+              <div class="mx-auto border border-primary rounded" style="width: 250px">
+
+                <h1 class="h3 mb-3 fw-normal text-center">Temperature(C)</h1>
+
+                <h1 class="fs-1 text-center" id="val_temp">0</h1>
+
+              </div>
+
+            </div>
+
+            <div class="col-sm">
+
+              <div class="mx-auto border border-primary rounded" style="width: 250px">
+
+                <h1 class="h3 mb-3 fw-normal text-center">Position</h1>
+
+                <h1 class="fs-1 text-center" id="val_pos">On Back</h1>
+
+              </div>
+
+            </div>
+
+            <div class="col-sm">
+
+              <div class="mx-auto border border-primary rounded" style="width: 250px">
+
+                <h1 class="h3 mb-3 fw-normal text-center">BPM</h1>
+
+                <h1 class="fs-1 text-center" id="val_bpm">0</h1>
+
+              </div>
+
+            </div>
+
+            <br>
+
+          </div>
+
+          <br>
+
+        </div>
+
+        <br>
+
+        <h1 class="h2 border-bottom border-primary ">Alert</h1>
+
+        <br>
+
+        <div class="row justify-content-center">
+
+          <div class="row">
+
+            <div class="col text-center border border-primary">
+
+              <p class="text h3" style="font-size:1.7em" > General status </p>
+
+            </div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text" style="font-size:1.7em" id="gen_status"> Good </p>
+
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text h3" style="font-size:1.7em" > Temperature </p>
+
+            </div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text" style="font-size:1.7em" id="temp_status" > Good </p>
+
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text h3" style="font-size:1.7em" > Position </p>
+
+            </div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text" style="font-size:1.7em" id="pos_status" > Good </p>
+
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text h3" style="font-size:1.7em" > BPM </p>
+
+            </div>
+
+            <div class="col text-center border border-primary">
+
+              <p class="text" style="font-size:1.7em" id="pbm_status" > Good </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+      </main>
+
+    </div>
+
+  </body>
+
+</html>

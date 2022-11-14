@@ -1,0 +1,24 @@
+
+var XMLHttpRequest = require('xhr2');
+
+var xhr = new XMLHttpRequest();
+
+var url = 'http://localhost:3000/datos';
+
+xhr.open('PUT', url, true);
+
+xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+var obj = new Object();
+obj.idnodo = 1;
+obj.temperatura  = 26;
+obj.humedad = 66;
+obj.timestamp = "12-20-2000/3-13-6";
+obj.id_invernadero = 1;
+obj.id = 10;
+
+var json= JSON.stringify(obj);
+
+console.log(json);
+
+xhr.send(json);

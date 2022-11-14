@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+
+  <head>
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="./styles/style.css" rel="stylesheet">
+    <script src="./scripts/login.js"></script>
+
+  </head>
+
+  <body class="text-center">
+
+    <main class="form-signin w-100 m-auto">
+
+      <form onsubmit="return false" name="index" method="post">
+
+        <img class="mb-4" src="./imagenes/bebe.png" alt="" width="120" height="100">
+
+        <h1 class="h3 mb-3 fw-normal" id="sig">Login</h1>
+
+        <div class="form-floating">
+
+          <input type="text" class="form-control text-center"  id="user" placeholder="User" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <input type="password" class="form-control text-center" id="password" placeholder="Password" required>
+
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary bg-primary"  onclick="login();">Login</button>
+
+      </form>
+
+    </main>
+
+  </body>
+
+</html>
