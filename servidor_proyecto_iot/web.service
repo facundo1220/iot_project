@@ -1,0 +1,12 @@
+[Unit]
+Description=Web App Startup process
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c '/usr/bin/node  /home/azureuser/Proyecto_IOT/servidor_proyecto_iot/src/indexrest.js'
+Restart=on-failure
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
